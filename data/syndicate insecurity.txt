@@ -8,12 +8,29 @@ phrase "stormhold gang"
 		"[SG] "
 	phrase
 		"pirate"
+		
+		
+outfit "Sealed Consignment 25045"
+	category "Special"
+	tags human syndicate
+	cost 0
+	thumbnail "outfit/unknown"
+	"mass" 2
+	"outfit space" -2
+	"installable" -1
+	description "Syndicated Security lock boxes offer security and privacy for 'special' cargo items. Accessing one without a 24-digit code is reported to be impossible."
+	description "This lock box has the consignment number '25045' listed on the side."
 
+	
+###############################################################################
+# Syndicate Insecurity Debugging
+###############################################################################	
 
 mission "Syndicate Insecurity: Clear"
 	name "*DEBUG* Clear Syndicate Insecurity"
 	description "Accept this mission to clear all conditions related to the Syndicate Insecurity storyline."
 	repeat
+	deadline 1
 	job
 	source
 		planet Trove Crossroads Lodestone Quicksilver Canyon Stormhold Icefall Moonshake Sundive
@@ -23,8 +40,12 @@ mission "Syndicate Insecurity: Clear"
 	on accept
 		clear "Syndicate Insecurity 1: offered"
 		clear "Syndicate Insecurity 1: done"
-		clear "Syndicate Insecurity 1 (End: Good): offered"
-		clear "Syndicate Insecurity 1 (End: Bad): offered"
+		clear "Syndicate Insecurity 1A: offered"
+		clear "Syndicate Insecurity 1B: offered"
+		clear "Syndicate Insecurity 1C: offered"
+		clear "Syndicate Insecurity 1C: done"
+		clear "Syndicate Insecurity 1D: offered"
+		clear "Syndicate Insecurity 1D: done"
 		clear "Syndicate Insecurity 1 (Canyon: Visit): offered"
 		clear "Syndicate Insecurity 1 (Canyon: Investigate): offered"
 		clear "Syndicate Insecurity 1 (Canyon: Investigate): done"
@@ -33,15 +54,14 @@ mission "Syndicate Insecurity: Clear"
 		clear "Syndicate Insecurity 1 (Icefall: Visit): offered"
 		clear "Syndicate Insecurity 1 (Icefall: Investigate): offered"
 		clear "Syndicate Insecurity 1 (Icefall: Investigate): done"
-		clear "Syndicate Insecurity 1: offered"
-		clear "Syndicate Insecurity 1: done"
 		clear "Syndicate Insecurity 1 (Oberon: Visit): offered"
 		clear "Syndicate Insecurity 1 (Alabaster Oceans): offered"
 		clear "Syndicate Insecurity 1: returning"
+		clear "Syndicate Insecurity 2: offered"
 		fail "Syndicate Insecurity 1"
+		fail "Syndicate Insecurity 1C"
 		fail "Syndicate Insecurity 1 (Alabaster Oceans)"
 		fail "Syndicate Insecurity 2"
-
 		fail
 		
 
@@ -95,30 +115,29 @@ mission "Syndicate Insecurity 1"
 					goto help1
 				`	"You'd be wrong. Buzz off." (Decline the mission.)`
 					goto nohelp					
-
 			
 			label help1
 			`	"My name's Edmun Seaton. I'm the personal assistant of, ah... let's just say a very influential captain of industry around here. I need to requisition the services of someone like you, someone independent and... able to deal with a particular problem my employer faces."`
-			`	He removes the rather ostentatious sunglasses and takes a seat, but doesn't seem much friendlier for it. Underneath a black dust cloak you see the collar of a suit, and something in his bearing seems military to you. Regardless, he has no Syndicate Security insignia and there's a note of apprehension in his voice.`			
+			`	He removes the rather ostentatious sunglasses and takes a seat, but doesn't seem much friendlier for it. Underneath a black dust cloak you see the collar of a suit, and something in his bearing seems military to you. Regardless, he has no Syndicated Security insignia and there's a note of apprehension in his voice.`			
 			
 			choice
 				`	"What's the problem?"`
 				`	"Is this legal? I won't get involved with anything illegal."`
 				`	"Is this legal? I charge extra for anything illicit."`
 
-			`	"It's nothing illegal, just delicate. A priceless and ancient piece of artwork has gone missing from my employer's private collection. This is an embarrassing incident and one which has upset her significantly. I have been investigating the theft personally, and got a lock on the nano-tracer in this region, heading north. But," he motions to the nearest newsfeed display, "this flashpoint in pirate activity has grounded me. That's where you come in."
+			`	"It's nothing illegal, just delicate. A priceless and ancient piece of art has gone missing from my employer's private collection. This is an embarrassing incident and one which has upset her significantly. I have been investigating the theft personally, and got a lock on the nano-tracer in this region, heading north. But," he motions to the nearest newsfeed display, "this flashpoint in pirate activity has grounded me. That's where you come in."
 
 			choice
+				`	"So you want me to follow the trail?"`
+					goto help3
 				`	"Why don't you involve the authorities?"`
 					goto authorities
 				`	"Why can't you continue following the lead?"`
 					goto grounded
-				`	"So you want me to follow the trail?"`
-					goto help3
 				
 			label authorities
-			`	"This isn't Republic space, there's no Navy presence here. Syndicate Security deal with all crimes reported out here, and within the Syndicate all sensitive information has a price. An embarrassing breach of security affecting a major business owner? Our stock would plummet. We need to handle this quickly and discreetly."`
-			`	An astute merchant captain might note that his employer's business would only suffer from such a revelation if she was a major player in Syndicate Security herself. And a woman in such a position in the Syndicate? You suspect this man has already told you far more than he intended.`
+			`	"This isn't Republic space, there's no Navy presence here. Syndicated Security deal with all crimes reported out here, and within the Syndicate all sensitive information has a price. An embarrassing breach of security affecting a major business owner? Our stock would plummet. We need to handle this quickly and discreetly."`
+			`	An astute merchant captain might note that his employer's business would only suffer from such a theft if the employer a major player in Syndicated Security herself. And a woman in such a position in the Syndicate? You suspect this man might've already let slip enough to compromise her identity.`
 
 			choice
 				`	"Why can't you continue following the lead?"`
@@ -136,7 +155,7 @@ mission "Syndicate Insecurity 1"
 					goto help3
 
 			label authorities2
-			`	"This isn't Republic space, there's no Navy presence here. Syndicate Security deal with all crimes reported out here, and within the Syndicate all sensitive information has a price. An embarrassing breach of security affecting a major business owner? Our stock would plummet. We need to handle this quickly and discreetly."`
+			`	"This isn't Republic space, there's no Navy presence here. Syndicated Security deal with all crimes reported out here, and a well-placed bribe from a competitor can get them any information they might want. An embarrassing breach of security affecting a major business owner? Our stock would plummet. We need to handle this quickly and discreetly."`
 
 			choice
 				`	"So you want me to follow the trail?"`
@@ -159,16 +178,16 @@ mission "Syndicate Insecurity 1"
 				`	"What can you tell me about the ship I'm looking for?"`
 					goto ship
 				
-				`	"Where will it go from Sheratan"?`
+				`	"Where will it go from Sheratan?"`
 					goto destination
 				
 				`	"How serious is this pirate threat?"`
 					goto pirates
 				
-				`	"Okay. What do you want me to do once I've found the ship?"
+				`	"Okay. What do you want me to do once I've found the ship?"`
 					goto help4
 					
-				`	"Not interested." (Decline the mission.)
+				`	"Not interested." (Decline the mission.)`
 					goto nohelp	
 				
 			label ship
@@ -188,7 +207,7 @@ mission "Syndicate Insecurity 1"
 					goto nohelp	
 					
 			label destination
-			`	"They might be heading to Stormhold in the Alcyone system, to make a quick sale to the outlaws out there. Otherwise Mirfak is the gateway to Republic space where they might find a buyer." `
+			`	"They might be heading to Stormhold in the Alcyone system, to make a quick sale to the outlaws out there. Otherwise Mirfak is the gateway to Republic space where they might find a buyer."`
 			choice				
 				`	"What can you tell me about the ship I'm looking for?"`
 					goto destandship
@@ -230,7 +249,7 @@ mission "Syndicate Insecurity 1"
 					goto nohelp	
 
 			label destandship
-			`	"They might be heading to Stormhold in the Alcyone system, to make a quick sale to the outlaws out there. Otherwise Mirfak is the gateway to Republic space where they might find a buyer." `
+			`	"They might be heading to Stormhold in the Alcyone system, to make a quick sale to the outlaws out there. Otherwise Mirfak is the gateway to Republic space where they might find a buyer."`
 			choice				
 				`	"How serious is this pirate threat?"`
 					goto allandpirates
@@ -309,7 +328,7 @@ mission "Syndicate Insecurity 1"
 					goto nohelp	
 
 			label allandpirates
-			`	He shrugs. "I hear it's a warzone. Just remember we don't care one shit about that. Every minute matters on this job, so I wouldn't waste your time helping out any authorities or traders. The job's more important." Charming fellow.`
+			`	He shrugs. "I hear it's a warzone. Just remember we don't care one whit about that. Every minute matters on this job, so I wouldn't waste your time helping out any authorities or traders. The job's more important." Charming fellow.`
 			choice
 				`	"Okay. What do you want me to do once I've found the ship?"`
 					goto help4
@@ -318,8 +337,8 @@ mission "Syndicate Insecurity 1"
 					goto nohelp		
 
 			label help4
-			`	"That's up to you. I'll pay you 300,000 if you board the ship and get the artwork back, but even if you just get the ship's registration code it's a start, and I can pay 150,000. Anything at all will be helpful at this point."`
-			`	"That said, I'll need you to meet me on <destination> on <day> at the very latest. If you have the artwork my employer will reward you richly. If you have a lead, that gives us time to prepare an excuse to cancel a showing three weeks today, and we can go from there."`
+			`	"That's up to you. I'll pay you 300,000 if you board the ship and get the painting back, but even if you just get the ship's registration code it's a start, and I can pay 150,000. Anything at all will be helpful at this point, but be discreet. Keeping this quiet is more important than the painting itself."`
+			`	"All that said, I'll need you to meet me on <destination> on <day> at the very latest. If you have it my employer will reward you richly. If you have a lead, that gives us time to prepare an excuse to cancel a showing three weeks today, and we can go from there."`
 			`	He replaces the sunglasses and stands to leave. "I'll send a wave to your <ship> with the nano-tracer's signature, so your cargo scanner can pick it up. And Captain, one last thing... don't mention this to anyone. I'm counting on your discretion."`
 				accept
 					
@@ -341,7 +360,7 @@ mission "Syndicate Insecurity 1"
 		personality timid staying
 		government Syndicate
 		system "Menkar"
-		ship "Quicksilver" "Quicksilver ((Syndicate Insecurity))"
+		ship "Quicksilver" "Quicksilver (Syndicate Insecurity)"
 			name "S-83A6"
 			outfits
 				"Particle Cannon" 2
@@ -353,8 +372,8 @@ mission "Syndicate Insecurity 1"
 				"Greyhound Plasma Steering"
 				"Hyperdrive"
 			cargo
-				commodities
-					"Stolen Artwork" 1
+				outfits
+					"Sealed Consignment 25045" 1
 		dialog `Your search algorithm finally has a match: this is the ship. Somewhere inside the cargo bay of this vessel is the tracer-laced stolen artwork. However, you have a problem. The S-83A6 isn't a merchant ship, but a military vessel! Firing on it isn't an option, at least not one the client would approve of. You'll have to rendezvous with your contact on <planet> and explain the situation.`
 
 	npc evade
@@ -407,20 +426,21 @@ mission "Syndicate Insecurity 1"
 		dialog "As the first system north of Sheratan, Zaurak is where your search begins. Thankfully the pirate raid raging in Sheratan has passed Zaurak by. From here, the art thief could have travelled to Stormhold in Alcyone, or travelled west toward Mirfak."
 
 	on fail
-		dialog "Before the day is out you exchange a difficult series of transmissions with Edmun Seaton. The thief's ship has been destroyed. Discreet recovery of the artwork was the objective, and unfortunately you weren't successful. You sadly conclude this mission has been one of your rare failures."
+		dialog "You pick up a message from Edmun Seaton expressing, rather emphatically, how badly your operation has gone. Needless to say, it doesn't look like you'll be being paid for this one."
 
-
-
-mission "Syndicate Insecurity 1 (End: Good)"
+mission "Syndicate Insecurity 1A"
 	invisible
 	landing
 	source Moonshake
 	destination Moonshake
 	to offer
 		has "Syndicate Insecurity 1: done"
+		not "Syndicate Insecurity 1B: offered"
+		not "Syndicate Insecurity 1D: done" 
 		
 	on offer
 		payment 150000
+		require "Sealed Consignment 25045" 0
 		conversation
 			`Before landing you arrange a meeting with security chief Edmun Seaton via wave. Unsurprisingly, he arranges to meet you a long way from the main spaceport, in a dimly lit bar offering a 'genuine Dirt Belt chic'. It's a dive bar, and you find Edmun holed up in a dark corner trying to be surreptitious and only succeeding in being conspicuous.`
 			`	"Captain <last>, I'm glad to see you," he greets you unconvincingly. "What news do you have for me?"`
@@ -430,15 +450,15 @@ mission "Syndicate Insecurity 1 (End: Good)"
 				
 			`	He curses with surprising authenticity. "You're right, I'm damn glad you didn't open fire. Did you get the registration code of the vessel?"`
 			`	He takes note of the ship designation S-83A6 and the full registration number, and briefly buries himself in a tablet device looking up background information.`
-			`	"So this is something. 83A6 is a ship designation carried by a Syndicate Security contractor. The designation isn't permanent, but it's a matter of public record which ship and captain it was registered to at any given time."`
+			`	"So this is something. 83A6 is a ship designation carried by a Syndicated Security contractor. The designation isn't permanent, but it's a matter of public record which ship and captain it was registered to at any given time."`
 			
 			choice
 				`	"A contractor? So it's not an official Syndicate ship?"`
 				
-			`	"There's no such thing as an official Syndicate ship. All Syndicate Security services are provided by private defence contractors. Even many of their employees are freelance. The S-83A6 was most recently registered by Zenith Defence Solutions."`
+			`	"There's no such thing as an official Syndicate ship. All Syndicated Security services are provided by private defence contractors. Even many of their employees are freelance. The S-83A6 was most recently registered by Zenith Defence Solutions."`
 			
 			choice
-				`	"So what's next?`
+				`	"So what's next?"`
 					goto next
 				`	"I hope that's useful to you. We need to talk about payment."`
 					goto payment
@@ -455,17 +475,137 @@ mission "Syndicate Insecurity 1 (End: Good)"
 			
 			
 
-mission "Syndicate Insecurity 1 (End: Bad)"
+mission "Syndicate Insecurity 1B"
 	invisible
+	landing
 	source Moonshake
 	destination Moonshake
 	to offer
 		has "Syndicate Insecurity 1: done"
-		random < 0
+		not "Syndicate Insecurity 1A: offered"
+		not "Syndicate Insecurity 1D: done" 
 
-
-
+	on offer
+		"reputation: Syndicate" -= 100
+		outfit "Sealed Consignment 25045" -1
+		conversation
+			`As you step out of your <ship>, everything at first seems ordinary. Perhaps, for a moment, it occurs to you that the vicinity of your spaceport pad is a little too quiet, but nothing seems seriously amiss at first. That is, until a flurry of red laser pointers focus on your chest. The beams shimmer clearly through the thick smog.`
+			`"<first> <last>, you are under arrest for crimes against Syndicated Security. You will lie flat on the ground immediately, arms outstretched, or you will be shot for resisting justice," a loudspeaker blares.`
+			choice
+				`	(Get on the ground.) `
+					goto submit
+				`	(Resist.) `
+					goto resist
+							
+			label submit
+			`	You spend the night in a Syndicate jail cell. Without a subscription for a first class upgrade, it's not a very pleasant experience. However, in the morning, you're quickly bailed out by a 'mysterious benefactor' and are free to go.`
+			`	As you return to your <ship>, you find a message waiting for you. The source is anonymous, but it's obviously your 'friend' Edmun Seaton.`
+			`	"Maybe I didn't make your mission clear, <last>. Discreet recovery. Discreet. Opening fire on Syndicated Security wasn't part of the job. The artwork was recovered from your ship and is under audit, and the fact it was stolen from my employer will come out. Do you have any idea how embarrassing this will be?`
+			`	"I knew I shouldn't have trusted an unknown quantity with something like this."`
+			`	"Well, I've paid your fines. You won't be called as a witness. You're free to go, and if you've any goodwill left with the Syndicate they might not even shoot you on sight. You will not hear from me again."`
+				decline
 			
+			label resist
+			`	Only a genius or a fool would think of trying to resist under these circumstances. But you do. As you are blasted apart by a fusillade of sniper fire, it seems clear which one you were.`
+				die
+
+				
+
+# WIP			
+mission "Syndicate Insecurity 1C"
+	name "Betray Edmun Seaton"
+	description "Fuuuuck."
+	landing
+	minor
+	source
+		government Syndicate
+	destination Sunracer
+	to offer
+		not "Syndicate Insecurity 1A: offered"
+		not "Syndicate Insecurity 1B: offered"
+	
+	on offer
+		require "Sealed Consignment 25045"
+		conversation
+			apply
+				set "Syndicate Insecurity 1: returning"
+			`How about delivering the painting back to the thieves?`
+			choice
+				`	(Okay!) `
+					accept
+				`	(What? No!) `
+					decline	
+
+	on complete
+		conversation
+			`Here's some sweet backstabbing money!`
+		outfit "Sealed Consignment 25045" -1	
+		payment 2000000
+		fail "Syndicate Insecurity 1"
+
+	
+	
+# REWRITE COMPLETELY.
+mission "Syndicate Insecurity 1D"
+	invisible
+	landing
+	source Stormhold
+	destination Moonshake
+	to offer
+		not "Syndicate Insecurity 1A: offered"
+		not "Syndicate Insecurity 1B: offered"
+		
+	on offer	
+		conversation
+			apply
+				set "Syndicate Insecurity 1: returning"
+			`A 300,000 credit payout for recovering the stolen art isn't... bad, exactly. But you can't help thinking you could probably do better. In particular, the last few days you've wondered a few times just how 'priceless' this art really is.`	
+			choice
+				`	(Try to sell the art on Stormhold.) `
+					goto sell
+				`	(Do nothing.) `
+					defer
+			
+			label sell
+			`	You spend hours asking around, trying to find anyone who might be interested in purchasing 'priceless' stolen artwork off you. Between art not being a traditional interest of pirates, and the sealed box you recovered being considered almost impenetrable, you don't have much luck. You're considering giving up when, on the way back to your <ship>, you find four pirates waiting for you just outside. Interestingly, they're wearing suits.`
+			`	"Ah, the good captain <first> <last>," says a hawkish man with thinning hair. Unlike the others, he seems to carry no weapons, but has the look of someone in charge. "I hear you're visiting our humble port looking to make a certain trade?"`
+			choice
+				`	"I'm looking to sell something ancient and priceless." `
+					goto sell2
+				`	"I've changed my mind, I'll be going." `
+					goto changemind	
+					
+			label sell2
+			`	"Priceless, you say? You should hope not, if you mean to do business. But tell me, do you know what it is you're here to sell? Beyond 'consignment 25045', I mean?"	`
+				`	"How do you know so much?"`
+					goto sell3
+					
+			label changemind
+			`	He doesn't skip a beat. "But of course, but of course. That is entirely your prerogative."`
+			`	Stepping aside, he throws a parting shot your way. "Of course, you will be aware that your employer will not be happy to hear you fired on a Syndicated Security ship. I understand her ladyship has already sold you out, and you may not enjoy your return to Moonshake."
+			choice
+				`	"How do you know so much?"`
+					goto sell3
+				`	(Ignore him, and leave Moonshake.)`
+					flee
+					
+			label sell3
+			`	"Why my good fellow, knowledge is my business. The Stormhold Gang, such as we are, thrive because we keep our ears to the ground."`
+			`	"That is why I know that you have misstepped in your involvement in a petty feud between Syndicated Security contractors. It is why I know exactly how to open that sealed box. And it is why I know that the object burning a hole in your cargo bay is a twelve hundred year old painting, Der Schrei der Natur, by one Edvard Munch. An interesting piece, when you consider the uncanny resemblance to the Quarg... but I digress."`
+			`	He motions for one of the others, who shows you a credit slip for 4M credits. "This, and our arrangement that you suffer no consequences in the Syndicate, should conclude our business, yes?"
+			choice
+				`	(Accept 4M credits.)`
+					accept
+				`	(Refuse.)`
+					flee
+					
+	on accept
+		outfit "Sealed Consignment 25045" -1	
+		payment 4000000
+		fail "Syndicate Insecurity 1"
+						
+			
+				
 ###############################################################################
 # Syndicate Insecurity 1 (Side Missions)
 ###############################################################################	
@@ -480,6 +620,7 @@ mission "Syndicate Insecurity 1 (Stormhold: Visit)"
 		not "Syndicate Insecurity 1: returning"		
 	
 	on offer
+		require "Sealed Consignment 25045" 0
 		conversation
 			`You bring your <ship> down through the dense fogs of <origin>, finding your way to the planet's largest outpost.`
 			`Your scanners are unable to detect any residual signature from the nano-tracer. You can't be certain that means it wasn't brought here: it would take half a year, at least, to do a sweep of every outpost - and you'd probably attract a little too much attention.`
@@ -497,12 +638,13 @@ mission "Syndicate Insecurity 1 (Canyon: Visit)"
 		not "Syndicate Insecurity 1: returning"
 	
 	on offer
+		require "Sealed Consignment 25045" 0
 		conversation
 			`Setting your <ship> down on the featureless stone field that passes for a spaceport on <origin>, you haven't even powered down your repulsor engines when your ship's communicator picks up a message from Edmun Seaton.`
 			`	"<first> my old friend, sorry to bother you, but just wanted to check if you're bringing a plus one to the wedding?"`
 			`	This is code, of course, and not very good code at that. Edmun spelled out his foolish communication protocol in an earlier message. 'Bringing a plus one' means whether or not you've recovered the artwork.`
 			choice
-				`	"I'll need to check with my partner." (If you haven't located the target yet.) `
+				`	"I'll need to check with my partner." (If you haven't located the target yet.)`
 					goto notyet
 				`	"Yes, I'm bringing a plus one." (If you've retrieved the artwork.) `
 					goto retrieved
@@ -517,7 +659,7 @@ mission "Syndicate Insecurity 1 (Canyon: Visit)"
 				decline
 			
 			label retrieved
-			`	You fire off the response. As he'd requested earlier, you also ask him if you remember the date right, and give the date you expect to arrive at <planet>. With the matter done, you finish shutting off your repulsors and go about your business.`
+			`	You fire off the response. As he'd requested earlier, you also ask him if you remember the date right, and give the date on which you expect to arrive at <planet>. With the matter done, you finish shutting off your repulsors and go about your business.`
 			apply
 				set "Syndicate Insecurity 1: returning"
 				
@@ -542,6 +684,7 @@ mission "Syndicate Insecurity 1 (Canyon: Investigate)"
 		"credits" >= 5000
 
 	on offer
+		require "Sealed Consignment 25045" 0
 		conversation
 			`Quiet as the spaceport village may be, it takes only a quarter of an hour to find out what it will take to access the traffic logs for the system: a 5,000 credit slip, with no tax receipt. The traffic logs may not tell you anything useful, but the cost is a pittance compared to the pay for the job.`
 			choice
@@ -577,6 +720,7 @@ mission "Syndicate Insecurity 1 (Canyon: Blocked)"
 		"credits" < 5000
 
 	on offer
+		require "Sealed Consignment 25045" 0
 		conversation
 			`Quiet as the spaceport village may be, it takes only a quarter of an hour to find out what it will take to access the traffic logs for the system: a 5,000 credit slip, with no tax receipt.`
 			choice
@@ -591,8 +735,10 @@ mission "Syndicate Insecurity 1 (Icefall: Visit)"
 	destination Moonshake
 	to offer
 		has "Syndicate Insecurity 1: active"
+		not "Syndicate Insecurity 1: returning"
 	
 	on offer
+		require "Sealed Consignment 25045" 0
 		conversation
 			branch canyon nocanyon
 				has "Syndicate Insecurity 1 (Canyon: Visit): offered"
@@ -640,7 +786,7 @@ mission "Syndicate Insecurity 1 (Icefall: Visit)"
 			choice
 				`	(Let him know you're still searching.)`
 					goto notyet2
-				`	(Let him know you're on your way back.) `
+				`	(Let him know you're on your way back.)`
 					goto retrieved
 					
 			label notyet2		
@@ -674,6 +820,7 @@ mission "Syndicate Insecurity 1 (Icefall: Investigate)"
 		"credits" >= 12000
 	
 	on offer
+		require "Sealed Consignment 25045" 0
 		conversation
 			branch canyonlogs nologs
 				has "Syndicate Insecurity 1 (Canyon: Investigate): done"
@@ -683,17 +830,17 @@ mission "Syndicate Insecurity 1 (Icefall: Investigate)"
 			`	"You're the one nosying about over on Canyon? Well, I've got the files ready for you. 12,000 and they're yours."`
 			`	Say what you will about the Syndicate: nobody does corruption with more efficiency.`
 			choice
-				`	(Pay 12,000 credits for access to the traffic logs.) `
+				`	(Pay 12,000 credits for access to the traffic logs.)`
 					goto logsx2
-				`	(Don't bother.) `
+				`	(Don't bother.)`
 					decline
 					
 			label nologs
 			`The bar is packed with visitors sheltering from stormy weather and pirate hostilities. You ask around to find an off-duty traffic controller, and quickly find one who's willing to sell you the traffic data you need for a 12,000 credit slip.`
 			choice
-				`	(Pay 12,000 credits for access to the traffic logs.) `
+				`	(Pay 12,000 credits for access to the traffic logs.)`
 					goto logs
-				`	(Don't bother.) `
+				`	(Don't bother.)`
 					decline
 					
 			label logsx2
@@ -705,7 +852,7 @@ mission "Syndicate Insecurity 1 (Icefall: Investigate)"
 			`White Champion: docked at Canyon, clear.`
 			`Alabaster Oceans: jumped to Mirfak.`
 			``
-			`Most of the Syndicate Security ships are berthed at a military base and are inaccessible. The Alabaster Oceans in Mirfak seems like the most likely candidate. If the target isn't in this system anyway...`
+			`Most of the Syndicated Security ships are berthed at a military base and are inaccessible. The Alabaster Oceans in Mirfak seems like the most likely candidate. If the target isn't in this system anyway...`
 				accept
 
 			label logs
@@ -729,6 +876,7 @@ mission "Syndicate Insecurity 1 (Icefall: Blocked)"
 		"credits" < 12000
 	
 	on offer
+		require "Sealed Consignment 25045" 0
 		conversation
 			branch canyonlogs nologs
 				has "Syndicate Insecurity 1 (Canyon: Investigate): done"
@@ -769,6 +917,8 @@ mission "Syndicate Insecurity 1 (Alabaster Oceans)"
 	deadline 16
 	to offer
 		has "Syndicate Insecurity 1: active"
+	on offer
+		require "Sealed Consignment 25045" 0
 		
 	npc "scan cargo"
 		personality timid staying appeasing
@@ -781,10 +931,11 @@ mission "Syndicate Insecurity 1 (Alabaster Oceans)"
 					"Luxury Goods" 23
 					"Adult Entertainment" 3
 		conversation
+		# 	START WITH NON-DIALOGUE: https://github.com/endless-sky/endless-sky/blob/master/data/free%20worlds%20intro.txt#L300
 			`"Err... excuse me? Are you scanning my ship? I'd rather you didn't... I mean, I've nothing to h-hide, nothing... it's just a regular commodity run, but..."`
 			`	You reassure him that you're not interested in the content of his cargo bay beyond a certain piece of lost property. You manage to convince him that your scan didn't retrieve the bar codes of several thousand rather adult virtual reality scenarios, and put him at ease.`
-			`	While the alternative might've been more fun, once he's relaxed he proves remarkably helpful - and remarkably chatty. He barely made it through Sheratan alive, and evidently doesn't think much of Syndicate Security. Apparently, a lone Quicksilver travelling the same route didn't even join the Syndicate forces in their resistance... just ran straight through at full speed.`
-			`	Curious. Syndicate Security might not be as brave as the Republic Navy, but why was that Quicksilver in such a hurry?`
+			`	While the alternative might've been more fun, once he's relaxed he proves remarkably helpful - and remarkably chatty. He barely made it through Sheratan alive, and evidently doesn't think much of Syndicated Security. Apparently, a lone Quicksilver travelling the same route didn't even join the Syndicate forces in their resistance... just ran straight through at full speed.`
+			`	Curious. Syndicated Security might not be as brave as the Republic Navy, but why was that Quicksilver in such a hurry?`
 
 
 	
@@ -796,7 +947,7 @@ mission "Syndicate Insecurity 1 (Alabaster Oceans)"
 	
 mission "Syndicate Insecurity 2"
 	name "Clear Sheratan and Implicate Zeniph"
-	description "Assist Syndicate Security in breaking the raid on Sheratan, then deliver your client's operatives to <destination> by <date>."
+	description "Assist Syndicated Security in breaking the raid on Sheratan, then deliver your client's operatives to <destination> by <date>."
 	deadline 300 # placeholder
 	source
 		planet Moonshake
@@ -809,7 +960,7 @@ mission "Syndicate Insecurity 2"
 		
 	on offer
 		conversation
-			`	This is placeholder text for the next job. You are to go to Sheratan, help Syndicate Security finish off the Sheratan pirate raid, making sure a pair of escort ships survives the encounter, and then land on Sundive with a small team that will work on planting evidence that Zeniph were responsible for the security failures here.`
+			`	This is placeholder text for the next job. You are to go to Sheratan, help Syndicated Security finish off the Sheratan pirate raid, making sure a pair of escort ships survives the encounter, and then land on Sundive with a small team that will work on planting evidence that Zeniph were responsible for the security failures here.`
 			choice
 				`	"Cool. Let's do this shit."`
 					accept
