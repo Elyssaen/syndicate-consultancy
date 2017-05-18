@@ -1,6 +1,6 @@
 
 ###############################################################################
-# Syndicate Insecurity Set-up
+# Syndicated Insecurity Set-up
 ###############################################################################	
 
 phrase "stormhold gang"
@@ -23,53 +23,53 @@ outfit "Sealed Consignment 25045"
 
 	
 ###############################################################################
-# Syndicate Insecurity Debugging
+# Syndicated Insecurity Debugging
 ###############################################################################	
 
-mission "Syndicate Insecurity: Clear"
-	name "*DEBUG* Clear Syndicate Insecurity"
-	description "Accept this mission to clear all conditions related to the Syndicate Insecurity storyline."
+mission "Syndicated Insecurity: Clear"
+	name "*DEBUG* Clear Syndicated Insecurity"
+	description "Accept this mission to clear all conditions related to the Syndicated Insecurity storyline."
 	repeat
 	deadline 1
 	job
 	source
 		planet Trove Crossroads Lodestone Quicksilver Canyon Stormhold Icefall Moonshake Sundive
 	to offer
-		has "Syndicate Insecurity 1: offered"
+		has "Syndicated Insecurity 1: offered"
 		
 	on accept
-		clear "Syndicate Insecurity 1: offered"
-		clear "Syndicate Insecurity 1: done"
-		clear "Syndicate Insecurity 1A: offered"
-		clear "Syndicate Insecurity 1B: offered"
-		clear "Syndicate Insecurity 1C: offered"
-		clear "Syndicate Insecurity 1C: done"
-		clear "Syndicate Insecurity 1D: offered"
-		clear "Syndicate Insecurity 1D: done"
-		clear "Syndicate Insecurity 1 (Canyon: Visit): offered"
-		clear "Syndicate Insecurity 1 (Canyon: Investigate): offered"
-		clear "Syndicate Insecurity 1 (Canyon: Investigate): done"
-		clear "Syndicate Insecurity 1 (Canyon: Blocked): offered"
-		clear "Syndicate Insecurity 1 (Stormhold: Visit): offered"
-		clear "Syndicate Insecurity 1 (Icefall: Visit): offered"
-		clear "Syndicate Insecurity 1 (Icefall: Investigate): offered"
-		clear "Syndicate Insecurity 1 (Icefall: Investigate): done"
-		clear "Syndicate Insecurity 1 (Oberon: Visit): offered"
-		clear "Syndicate Insecurity 1 (Alabaster Oceans): offered"
-		clear "Syndicate Insecurity 1: returning"
-		clear "Syndicate Insecurity 2: offered"
-		fail "Syndicate Insecurity 1"
-		fail "Syndicate Insecurity 1C"
-		fail "Syndicate Insecurity 1 (Alabaster Oceans)"
-		fail "Syndicate Insecurity 2"
+		clear "Syndicated Insecurity 1: offered"
+		clear "Syndicated Insecurity 1: done"
+		clear "Syndicated Insecurity 1A: offered"
+		clear "Syndicated Insecurity 1B: offered"
+		clear "Syndicated Insecurity 1C: offered"
+		clear "Syndicated Insecurity 1C: done"
+		clear "Syndicated Insecurity 1D: offered"
+		clear "Syndicated Insecurity 1D: done"
+		clear "Syndicated Insecurity 1 (Canyon: Visit): offered"
+		clear "Syndicated Insecurity 1 (Canyon: Investigate): offered"
+		clear "Syndicated Insecurity 1 (Canyon: Investigate): done"
+		clear "Syndicated Insecurity 1 (Canyon: Blocked): offered"
+		clear "Syndicated Insecurity 1 (Stormhold: Visit): offered"
+		clear "Syndicated Insecurity 1 (Icefall: Visit): offered"
+		clear "Syndicated Insecurity 1 (Icefall: Investigate): offered"
+		clear "Syndicated Insecurity 1 (Icefall: Investigate): done"
+		clear "Syndicated Insecurity 1 (Oberon: Visit): offered"
+		clear "Syndicated Insecurity 1 (Alabaster Oceans): offered"
+		clear "Syndicated Insecurity 1: returning"
+		clear "Syndicated Insecurity 2: offered"
+		fail "Syndicated Insecurity 1"
+		fail "Syndicated Insecurity 1C"
+		fail "Syndicated Insecurity 1 (Alabaster Oceans)"
+		fail "Syndicated Insecurity 2"
 		fail
 		
 
 ###############################################################################
-# Syndicate Insecurity 1
+# Syndicated Insecurity 1
 ###############################################################################	
 	
-mission "Syndicate Insecurity 1"
+mission "Syndicated Insecurity 1"
 	name "Locate Stolen Artwork"
 	description "Travel north via Sheratan and scan the cargo of ships to locate the stolen artwork. Retrieve the artwork if possible, but in any case report to <destination> by <date>."
 	minor
@@ -350,7 +350,7 @@ mission "Syndicate Insecurity 1"
 		personality timid staying appeasing
 		government Merchant
 		system "Menkar"
-		ship "Star Queen" "Star Queen (Syndicate Insecurity)"
+		ship "Star Queen" "Star Queen (Syndicated Insecurity)"
 			name "Faye's Virtue"
 			cargo
 				commodities
@@ -360,7 +360,7 @@ mission "Syndicate Insecurity 1"
 		personality timid staying
 		government Syndicate
 		system "Menkar"
-		ship "Quicksilver" "Quicksilver (Syndicate Insecurity)"
+		ship "Quicksilver" "Quicksilver (Syndicated Insecurity)"
 			name "S-83A6"
 			outfits
 				"Particle Cannon" 2
@@ -428,15 +428,15 @@ mission "Syndicate Insecurity 1"
 	on fail
 		dialog "You pick up a message from Edmun Seaton expressing, rather emphatically, how badly your operation has gone. Needless to say, it doesn't look like you'll be being paid for this one."
 
-mission "Syndicate Insecurity 1A"
+mission "Syndicated Insecurity 1A"
 	invisible
 	landing
 	source Moonshake
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: done"
-		not "Syndicate Insecurity 1B: offered"
-		not "Syndicate Insecurity 1D: done" 
+		has "Syndicated Insecurity 1: done"
+		not "Syndicated Insecurity 1B: offered"
+		not "Syndicated Insecurity 1D: done" 
 		
 	on offer
 		payment 150000
@@ -475,15 +475,15 @@ mission "Syndicate Insecurity 1A"
 			
 			
 
-mission "Syndicate Insecurity 1B"
+mission "Syndicated Insecurity 1B"
 	invisible
 	landing
 	source Moonshake
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: done"
-		not "Syndicate Insecurity 1A: offered"
-		not "Syndicate Insecurity 1D: done" 
+		has "Syndicated Insecurity 1: done"
+		not "Syndicated Insecurity 1A: offered"
+		not "Syndicated Insecurity 1D: done" 
 
 	on offer
 		"reputation: Syndicate" -= 100
@@ -512,7 +512,7 @@ mission "Syndicate Insecurity 1B"
 				
 
 # WIP			
-mission "Syndicate Insecurity 1C"
+mission "Syndicated Insecurity 1C"
 	name "Betray Edmun Seaton"
 	description "Fuuuuck."
 	landing
@@ -521,14 +521,14 @@ mission "Syndicate Insecurity 1C"
 		government Syndicate
 	destination Sunracer
 	to offer
-		not "Syndicate Insecurity 1A: offered"
-		not "Syndicate Insecurity 1B: offered"
+		not "Syndicated Insecurity 1A: offered"
+		not "Syndicated Insecurity 1B: offered"
 	
 	on offer
 		require "Sealed Consignment 25045"
 		conversation
 			apply
-				set "Syndicate Insecurity 1: returning"
+				set "Syndicated Insecurity 1: returning"
 			`How about delivering the painting back to the thieves?`
 			choice
 				`	(Okay!) `
@@ -541,24 +541,24 @@ mission "Syndicate Insecurity 1C"
 			`Here's some sweet backstabbing money!`
 		outfit "Sealed Consignment 25045" -1	
 		payment 2000000
-		fail "Syndicate Insecurity 1"
+		fail "Syndicated Insecurity 1"
 
 	
 	
 # REWRITE COMPLETELY.
-mission "Syndicate Insecurity 1D"
+mission "Syndicated Insecurity 1D"
 	invisible
 	landing
 	source Stormhold
 	destination Moonshake
 	to offer
-		not "Syndicate Insecurity 1A: offered"
-		not "Syndicate Insecurity 1B: offered"
+		not "Syndicated Insecurity 1A: offered"
+		not "Syndicated Insecurity 1B: offered"
 		
 	on offer	
 		conversation
 			apply
-				set "Syndicate Insecurity 1: returning"
+				set "Syndicated Insecurity 1: returning"
 			`A 300,000 credit payout for recovering the stolen art isn't... bad, exactly. But you can't help thinking you could probably do better. In particular, the last few days you've wondered a few times just how 'priceless' this art really is.`	
 			choice
 				`	(Try to sell the art on Stormhold.) `
@@ -602,22 +602,22 @@ mission "Syndicate Insecurity 1D"
 	on accept
 		outfit "Sealed Consignment 25045" -1	
 		payment 4000000
-		fail "Syndicate Insecurity 1"
+		fail "Syndicated Insecurity 1"
 						
 			
 				
 ###############################################################################
-# Syndicate Insecurity 1 (Side Missions)
+# Syndicated Insecurity 1 (Side Missions)
 ###############################################################################	
 
-mission "Syndicate Insecurity 1 (Stormhold: Visit)"
+mission "Syndicated Insecurity 1 (Stormhold: Visit)"
 	invisible
 	landing
 	source "Stormhold"
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: active"
-		not "Syndicate Insecurity 1: returning"		
+		has "Syndicated Insecurity 1: active"
+		not "Syndicated Insecurity 1: returning"		
 	
 	on offer
 		require "Sealed Consignment 25045" 0
@@ -628,14 +628,14 @@ mission "Syndicate Insecurity 1 (Stormhold: Visit)"
 				decline
 				
 
-mission "Syndicate Insecurity 1 (Canyon: Visit)"
+mission "Syndicated Insecurity 1 (Canyon: Visit)"
 	invisible
 	landing
 	source "Canyon"
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: active"
-		not "Syndicate Insecurity 1: returning"
+		has "Syndicated Insecurity 1: active"
+		not "Syndicated Insecurity 1: returning"
 	
 	on offer
 		require "Sealed Consignment 25045" 0
@@ -661,7 +661,7 @@ mission "Syndicate Insecurity 1 (Canyon: Visit)"
 			label retrieved
 			`	You fire off the response. As he'd requested earlier, you also ask him if you remember the date right, and give the date on which you expect to arrive at <planet>. With the matter done, you finish shutting off your repulsors and go about your business.`
 			apply
-				set "Syndicate Insecurity 1: returning"
+				set "Syndicated Insecurity 1: returning"
 				
 				decline
 				
@@ -669,18 +669,18 @@ mission "Syndicate Insecurity 1 (Canyon: Visit)"
 			`	You fire off the response. As he'd requested earlier, you also tell him what date you'll be able to confirm by - the date you expect to arrive at <planet>. With the matter done, you finish shutting off your repulsors and go about your business.`	
 
 			apply
-				set "Syndicate Insecurity 1: returning"
+				set "Syndicated Insecurity 1: returning"
 				
 				decline
 
 				
-mission "Syndicate Insecurity 1 (Canyon: Investigate)"
+mission "Syndicated Insecurity 1 (Canyon: Investigate)"
 	invisible
 	source "Canyon"
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: active"
-		not "Syndicate Insecurity 1: returning"
+		has "Syndicated Insecurity 1: active"
+		not "Syndicated Insecurity 1: returning"
 		"credits" >= 5000
 
 	on offer
@@ -706,17 +706,17 @@ mission "Syndicate Insecurity 1 (Canyon: Investigate)"
 			
 	on accept
 		payment -5000
-		set "Syndicate Insecurity 1 (Canyon: Investigate): done"
+		set "Syndicated Insecurity 1 (Canyon: Investigate): done"
 		fail
 
 		
-mission "Syndicate Insecurity 1 (Canyon: Blocked)"
+mission "Syndicated Insecurity 1 (Canyon: Blocked)"
 	invisible
 	source "Canyon"
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: active"
-		not "Syndicate Insecurity 1: returning"
+		has "Syndicated Insecurity 1: active"
+		not "Syndicated Insecurity 1: returning"
 		"credits" < 5000
 
 	on offer
@@ -728,20 +728,20 @@ mission "Syndicate Insecurity 1 (Canyon: Blocked)"
 					decline
 
 		
-mission "Syndicate Insecurity 1 (Icefall: Visit)"
+mission "Syndicated Insecurity 1 (Icefall: Visit)"
 	invisible
 	landing
 	source "Icefall"
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: active"
-		not "Syndicate Insecurity 1: returning"
+		has "Syndicated Insecurity 1: active"
+		not "Syndicated Insecurity 1: returning"
 	
 	on offer
 		require "Sealed Consignment 25045" 0
 		conversation
 			branch canyon nocanyon
-				has "Syndicate Insecurity 1 (Canyon: Visit): offered"
+				has "Syndicated Insecurity 1 (Canyon: Visit): offered"
 			
 			label nocanyon
 			`Setting your <ship> down on your assigned landing pad on <origin>'s industrial spaceport, you haven't even powered down your repulsor engines when your ship's communicator picks up a message from Edmun Seaton.`
@@ -764,19 +764,19 @@ mission "Syndicate Insecurity 1 (Icefall: Visit)"
 			
 			label retrieved
 			apply
-				set "Syndicate Insecurity 1: returning"
+				set "Syndicated Insecurity 1: returning"
 			`	You fire off the response. As he'd requested earlier, you also ask him if you remember the date right, and give the date you expect to arrive at <planet>. With the matter done, you finish shutting off your repulsors and go about your business.`
 				decline
 				
 			label complication
 			apply
-				set "Syndicate Insecurity 1: returning"
+				set "Syndicated Insecurity 1: returning"
 			`	You fire off the response. As he'd requested earlier, you also tell him what date you'll be able to confirm by - the date you expect to arrive at <planet>. With the matter done, you finish shutting off your repulsors and go about your business.`	
 				decline
 				
 			label canyon
 			branch returning checkreturning
-				has  "Syndicate Insecurity 1: returning"
+				has  "Syndicated Insecurity 1: returning"
 				
 			label returning
 				decline
@@ -791,7 +791,7 @@ mission "Syndicate Insecurity 1 (Icefall: Visit)"
 					
 			label notyet2		
 			branch logs nologs
-				has "Syndicate Insecurity 1 (Canyon: Investigate): done"
+				has "Syndicated Insecurity 1 (Canyon: Investigate): done"
 					
 			label logs
 			`You fire off the message, and run a scan for the nano-tracer. Nothing: not even a residual signature. The thief probably didn't land here. For reference, you pull up the traffic log history you obtained on Canyon.`	
@@ -810,20 +810,20 @@ mission "Syndicate Insecurity 1 (Icefall: Visit)"
 				
 
 
-mission "Syndicate Insecurity 1 (Icefall: Investigate)"
+mission "Syndicated Insecurity 1 (Icefall: Investigate)"
 	invisible
 	source "Icefall"
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: active"
-		not "Syndicate Insecurity 1: returning"
+		has "Syndicated Insecurity 1: active"
+		not "Syndicated Insecurity 1: returning"
 		"credits" >= 12000
 	
 	on offer
 		require "Sealed Consignment 25045" 0
 		conversation
 			branch canyonlogs nologs
-				has "Syndicate Insecurity 1 (Canyon: Investigate): done"
+				has "Syndicated Insecurity 1 (Canyon: Investigate): done"
 				
 			label canyonlogs
 			`The bar is packed with visitors sheltering from stormy weather and pirate hostilities. You ask around to find an off-duty traffic controller, and are cut off before you can even ask for access to the system's traffic logs.`
@@ -862,24 +862,24 @@ mission "Syndicate Insecurity 1 (Icefall: Investigate)"
 			
 	on accept
 		payment -12000
-		set "Syndicate Insecurity 1 (Icefall: Investigate): done"
+		set "Syndicated Insecurity 1 (Icefall: Investigate): done"
 		fail			
 			
 			
-mission "Syndicate Insecurity 1 (Icefall: Blocked)"
+mission "Syndicated Insecurity 1 (Icefall: Blocked)"
 	invisible
 	source "Icefall"
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: active"
-		not "Syndicate Insecurity 1: returning"
+		has "Syndicated Insecurity 1: active"
+		not "Syndicated Insecurity 1: returning"
 		"credits" < 12000
 	
 	on offer
 		require "Sealed Consignment 25045" 0
 		conversation
 			branch canyonlogs nologs
-				has "Syndicate Insecurity 1 (Canyon: Investigate): done"
+				has "Syndicated Insecurity 1 (Canyon: Investigate): done"
 				
 			label canyonlogs
 			`The bar is packed with visitors sheltering from stormy weather and pirate hostilities. You ask around to find an off-duty traffic controller, and are cut off before you can even ask for access to the system's traffic logs.`
@@ -896,13 +896,13 @@ mission "Syndicate Insecurity 1 (Icefall: Blocked)"
 					decline			
 			
 
-mission "Syndicate Insecurity 1 (Oberon: Visit)"
+mission "Syndicated Insecurity 1 (Oberon: Visit)"
 	invisible
 	landing
 	source "Oberon Station"
 	destination Moonshake
 	to offer
-		has "Syndicate Insecurity 1: active"
+		has "Syndicated Insecurity 1: active"
 	
 	on offer
 		conversation
@@ -911,12 +911,12 @@ mission "Syndicate Insecurity 1 (Oberon: Visit)"
 				decline
 
 				
-mission "Syndicate Insecurity 1 (Alabaster Oceans)"
+mission "Syndicated Insecurity 1 (Alabaster Oceans)"
 	invisible
 	landing
 	deadline 16
 	to offer
-		has "Syndicate Insecurity 1: active"
+		has "Syndicated Insecurity 1: active"
 	on offer
 		require "Sealed Consignment 25045" 0
 		
@@ -924,7 +924,7 @@ mission "Syndicate Insecurity 1 (Alabaster Oceans)"
 		personality timid staying appeasing
 		government Merchant
 		system Mirfak
-		ship "Bounder" "Bounder (Syndicate Insecurity)"
+		ship "Bounder" "Bounder (Syndicated Insecurity)"
 			name "Alabaster Oceans"
 			cargo
 				commodities
@@ -941,11 +941,11 @@ mission "Syndicate Insecurity 1 (Alabaster Oceans)"
 	
 	
 ###############################################################################
-# Syndicate Insecurity 2
+# Syndicated Insecurity 2
 ###############################################################################	
 	
 	
-mission "Syndicate Insecurity 2"
+mission "Syndicated Insecurity 2"
 	name "Clear Sheratan and Implicate Zeniph"
 	description "Assist Syndicated Security in breaking the raid on Sheratan, then deliver your client's operatives to <destination> by <date>."
 	deadline 300 # placeholder
@@ -956,7 +956,7 @@ mission "Syndicate Insecurity 2"
 	to offer
 		"combat rating" > 200
 		random <= 99
-		has "Syndicate Insecurity 1: done"
+		has "Syndicated Insecurity 1: done"
 		
 	on offer
 		conversation
